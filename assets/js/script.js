@@ -3,12 +3,12 @@ const zucchine = [
   {
     varieta: 'nera',
     pesoInGrammi: 500,
-    lunghezzaInCm: 30   
+    lunghezzaInCm: 12  
   },
   {
     varieta: 'romanesco',
     pesoInGrammi: 450,
-    lunghezzaInCm: 32   
+    lunghezzaInCm: 13   
   },
   {
     varieta: 'fiorentino',
@@ -23,7 +23,7 @@ const zucchine = [
   {
     varieta: 'tonda',
     pesoInGrammi: 720,
-    lunghezzaInCm: 15   
+    lunghezzaInCm: 8  
   },
   {
     varieta: 'trombetta',
@@ -43,12 +43,12 @@ const zucchine = [
   {
     varieta: 'rugoso',
     pesoInGrammi: 320,
-    lunghezzaInCm: 22   
+    lunghezzaInCm: 14   
   },
   {
     varieta: 'crookneck',
     pesoInGrammi: 800,
-    lunghezzaInCm: 33   
+    lunghezzaInCm: 10   
   }
 ];
 
@@ -58,6 +58,8 @@ const output3 = document.getElementById('output3');
 const output4 = document.getElementById('output4');
 const output5 = document.getElementById('output5');
 let sommaPesoZucchine = 0;
+let sommaPesoZucchineU15 = 0;
+let sommaPesoZucchineO15 = 0;
 
 zucchine.forEach(zucchina => {
   const {pesoInGrammi} = zucchina;
@@ -67,68 +69,34 @@ console.log(sommaPesoZucchine);
 output1.innerHTML = 'Somma Peso Zucchine = ' + sommaPesoZucchine;
 
 /////////////// JS snack 2 ///////////////
-// const z1 = {
-//   varieta: 'nera',
-//   pesoInGrammi: 500,
-//   lunghezzaInCm: 30 
-// }
 
-// const z2 = {
-//   varieta: 'nera',
-//   pesoInGrammi: 500,
-//   lunghezzaInCm: 30   
-// }
+const zUnder15 = [];
+const zOver15 = [];
 
-// const z3 = {
-//   varieta: 'romanesco',
-//   pesoInGrammi: 450,
-//   lunghezzaInCm: 32   
-// }
+zucchine.forEach(zucchina => {
+  const {lunghezzaInCm} = zucchina;
+  
+  if (lunghezzaInCm >= 15) {
+    zOver15.push(zucchina);
+  } else {
+    zUnder15.push(zucchina);
+  }
+})
 
-// const z4 = {
-//   varieta: 'fiorentino',
-//   pesoInGrammi: 350,
-//   lunghezzaInCm: 25   
-// }
+zUnder15.forEach(z => {
+  const {pesoInGrammi} = z;
+  sommaPesoZucchineU15 = sommaPesoZucchineU15 + pesoInGrammi;
+})
+console.log(sommaPesoZucchineU15);
 
-// const z5 = {
-//   varieta: 'napoletana',
-//   pesoInGrammi: 560,
-//   lunghezzaInCm: 40   
-// }
+zOver15.forEach(z => {
+  const {pesoInGrammi} = z;
+  sommaPesoZucchineO15 = sommaPesoZucchineO15 + pesoInGrammi;
+})
+console.log(sommaPesoZucchineO15);
 
-// const z6 = {
-//   varieta: 'tonda',
-//   pesoInGrammi: 720,
-//   lunghezzaInCm: 15   
-// }
+output2.innerHTML = 'Somma Peso Zucchine O15 = ' + sommaPesoZucchineO15 + ' | ' + 'Somma Peso Zucchine U15 = ' + sommaPesoZucchineU15;
 
-// const z7 = {
-//   varieta: 'trombetta',
-//   pesoInGrammi: 520,
-//   lunghezzaInCm: 39   
-// }
-
-// const z8 = {
-//   varieta: 'patisson',
-//   pesoInGrammi: 440,
-//   lunghezzaInCm: 27   
-// }
-
-// const z9 = {
-//   varieta: 'gialla',
-//   pesoInGrammi: 510,
-//   lunghezzaInCm: 34   
-// }
-
-// const z10 = {
-//   varieta: 'rugoso',
-//   pesoInGrammi: 320,
-//   lunghezzaInCm: 22   
-// }
-
-// const zUnder15 = [];
-// const zOver15 = [];
 
 /////////////// JS snack 3 ///////////////
 function getStr(str){
@@ -139,3 +107,9 @@ function getStr(str){
 }
 
 output3.innerHTML = getStr('sono una stringa');
+
+/////////////// JS snack 4 ///////////////
+// const j4array1 = ['1', '2', '3', '4'];
+// const j4array2 = ['1a', '2a', '3a', '4a'];
+// const j4array3 = [];
+
