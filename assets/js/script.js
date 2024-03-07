@@ -111,5 +111,33 @@ output3.innerHTML = getStr('sono una stringa');
 /////////////// JS snack 4 ///////////////
 // const j4array1 = ['1', '2', '3', '4'];
 // const j4array2 = ['1a', '2a', '3a', '4a'];
-// const j4array3 = [];
 
+// function mergeArrays () {
+
+// }
+
+
+
+
+
+/////////////// JS snack 5 ///////////////
+// dati
+// numA < numB
+// numB <= arr.length
+// return arr2
+
+const fArr5 = ['ugo', 'pino', 'martino', 'sigismondo', 'antonio']; 
+let result = [];
+
+f5(fArr5, 2, 4)
+
+console.log(result);
+output5.innerHTML = result.join(' | ')
+
+function f5 (arr, numA, numB) {
+  for (let i = 0; i < arr.length; i++) {
+    if (numA > 0 && i >= numA && numB > numA && i <= numB && numB <= arr.length) {
+      result.push(arr[i]); 
+    }  
+  }
+}
