@@ -66,7 +66,7 @@ zucchine.forEach(zucchina => {
   sommaPesoZucchine = sommaPesoZucchine + pesoInGrammi;
 })
 console.log(sommaPesoZucchine);
-output1.innerHTML = 'Somma Peso Zucchine = ' + sommaPesoZucchine;
+output1.innerHTML = 'J1: ' + 'Somma Peso Zucchine = ' + sommaPesoZucchine;
 
 /////////////// JS snack 2 ///////////////
 
@@ -95,7 +95,7 @@ zOver15.forEach(z => {
 })
 console.log(sommaPesoZucchineO15);
 
-output2.innerHTML = 'Somma Peso Zucchine O15 = ' + sommaPesoZucchineO15 + ' | ' + 'Somma Peso Zucchine U15 = ' + sommaPesoZucchineU15;
+output2.innerHTML = 'J2: ' +  'Somma Peso Zucchine O15 = ' + sommaPesoZucchineO15 + ' | ' + 'Somma Peso Zucchine U15 = ' + sommaPesoZucchineU15;
 
 
 /////////////// JS snack 3 ///////////////
@@ -106,19 +106,28 @@ function getStr(str){
   return str.split('').reverse().join('')
 }
 
-output3.innerHTML = getStr('sono una stringa');
+output3.innerHTML = 'J3: ' +  getStr('sono una stringa');
 
 /////////////// JS snack 4 ///////////////
-// const j4array1 = ['1', '2', '3', '4'];
-// const j4array2 = ['1a', '2a', '3a', '4a'];
+const j4array1 = ['1', '2', '3', '4'];
+const j4array2 = ['1a', '2a', '3a', '4a'];
+let j4array3 = [];
 
-// function mergeArrays () {
+console.log(mergeArrays(j4array1, j4array2, j4array3));
+output4.innerHTML = 'J4: ' + j4array3;
 
-// }
+function mergeArrays (arr1, arr2, arr3) {
+  if (arr1.length === arr2.length) {
+    for (let i = 0; i < arr1.length; i++) {
+      let el1 = arr1[i]
+      let el2 = arr2[i]
+      arr3.push(el1)
+      arr3.push(el2)
+    }
+    return arr3
+  }
 
-
-
-
+}
 
 /////////////// JS snack 5 ///////////////
 // dati
@@ -132,7 +141,7 @@ let result = [];
 f5(fArr5, 2, 4)
 
 console.log(result);
-output5.innerHTML = result.join(' | ')
+output5.innerHTML = 'J5: ' + result.join(' | ')
 
 function f5 (arr, numA, numB) {
   for (let i = 0; i < arr.length; i++) {
