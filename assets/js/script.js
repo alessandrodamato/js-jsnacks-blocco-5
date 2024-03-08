@@ -63,7 +63,7 @@ let sommaPesoZucchineO15 = 0;
 
 zucchine.forEach(zucchina => {
   const {pesoInGrammi} = zucchina;
-  sommaPesoZucchine = sommaPesoZucchine + pesoInGrammi;
+  sommaPesoZucchine += pesoInGrammi;
 })
 console.log(sommaPesoZucchine);
 output1.innerHTML = 'J1: ' + 'Somma Peso Zucchine = ' + sommaPesoZucchine;
@@ -85,13 +85,13 @@ zucchine.forEach(zucchina => {
 
 zUnder15.forEach(z => {
   const {pesoInGrammi} = z;
-  sommaPesoZucchineU15 = sommaPesoZucchineU15 + pesoInGrammi;
+  sommaPesoZucchineU15 += pesoInGrammi;
 })
 console.log(sommaPesoZucchineU15);
 
 zOver15.forEach(z => {
   const {pesoInGrammi} = z;
-  sommaPesoZucchineO15 = sommaPesoZucchineO15 + pesoInGrammi;
+  sommaPesoZucchineO15 += pesoInGrammi;
 })
 console.log(sommaPesoZucchineO15);
 
@@ -112,19 +112,19 @@ output3.innerHTML = 'J3: ' +  getStr('sono una stringa');
 const j4array1 = ['1', '2', '3', '4'];
 const j4array2 = ['1a', '2a', '3a', '4a'];
 let j4array3 = [];
+// controllo qual è il maggiore
+const arrayMaggiore = j4array1.length > j4array2.length ? j4array1.length : j4array2.length;
 
-console.log(mergeArrays(j4array1, j4array2, j4array3));
-output4.innerHTML = 'J4: ' + j4array3;
+mergeArrays(j4array1, j4array2, j4array3)
+output4.innerHTML = 'J4: ' + j4array3.join(' - ');
 
-function mergeArrays (arr1, arr2, arr3) {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      let el1 = arr1[i]
-      let el2 = arr2[i]
-      arr3.push(el1)
-      arr3.push(el2)
-    }
-    return arr3
+function mergeArrays (arr1, arr2) {
+
+  // faccio un ciclo in base all'array maggiore
+  for (let i = 0; i < arrayMaggiore; i++) {
+    //se l'indice attuale esiste lo pusho
+    if(arr1[i])j4array3.push(arr1[i])
+    if(arr2[i])j4array3.push(arr2[i])
   }
 
 }
